@@ -1,0 +1,152 @@
+/* Estilo general */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(245, 21, 5);
+}
+
+/* Encabezados */
+header {
+  background-color: #ffcc70;
+  padding: 20px;
+  text-align: center;
+}
+
+header img {
+  width: 100px;
+  height: auto;
+}
+
+/* Títulos */
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+h2,
+h3 {
+  color: #555;
+}
+
+/* Navegación */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Contenido principal */
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Imágenes de galería */
+main img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+footer ul {
+  list-style: inside;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline;
+  margin: 0 10px;
+
+  .contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .contenido {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .contenido img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  header,
+  footer {
+    text-align: center;
+    padding: 20px;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+  footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+  }

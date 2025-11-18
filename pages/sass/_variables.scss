@@ -1,0 +1,33 @@
+//  Colores principales //
+$color-body-bg: #f9f9f9;
+$color-text: #333;
+$color-text-active: #000;
+
+//  Colores del header //
+$color-header-bg: #ecf0f3;
+$color-header-text: #333;
+$color-bg-header: $color-header-bg;
+
+//  Colores del footer //
+$color-footer-bg: #343a40;
+$color-footer-text: #f8f9fa;
+
+//  Colores generales //
+$color-white: #fff;
+$color-gray: #ccc;
+
+//  Colores de texto extra //
+$color-text-strong: #000;
+$color-text-light: #666;
+
+//  Tipografía //
+$font-main: 'Arial', sans-serif;
+
+//  Bordes y sombras //
+$border-radius-base: 10px;
+$shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.1);
+$shadow-hover: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+// Colores para tienda //
+$color-primary: #007bff;
+$color-primary-dark: #0056b3;

@@ -1,0 +1,30 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+//* Footer *//
+footer {
+    background-color: v.$color-footer-bg;
+    color: v.$color-footer-text;
+    text-align: center;
+    padding: 20px;
+
+    a {
+        color: v.$color-footer-text;
+        text-decoration: none;
+        @include m.transition(color);
+
+        &:hover {
+            color: v.$color-primary;
+            text-decoration: underline;
+        }
+    }
+
+    ul {
+        margin-bottom: 10px;
+
+        li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+    }
+}

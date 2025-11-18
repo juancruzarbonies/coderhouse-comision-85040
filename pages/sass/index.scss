@@ -1,0 +1,80 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.index-page {
+    background-color: v.$color-header-bg;
+    color: v.$color-text;
+    min-height: 100vh;
+}
+
+//* Header de la página inicio *//
+header {
+    background-color: v.$color-header-bg;
+    padding: 20px;
+    text-align: center;
+
+    img {
+        width: 100px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        @include m.rounded(50%); // redondeamos la imagen de perfil/logo
+    }
+
+    h1 {
+        color: v.$color-text;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    nav {
+        ul {
+            @include m.flex-center(15px, wrap);
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: v.$color-text;
+                    font-weight: bold;
+                    @include m.transition(color);
+
+                    &.active {
+                        color: v.$color-text-active;
+                        font-weight: bolder;
+                    }
+
+                    &:hover {
+                        color: v.$color-text-active;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//* Main del index *//
+main {
+    padding: 20px;
+    text-align: center;
+
+    .row {
+        align-items: center;
+
+        img {
+            @include m.rounded();
+        }
+
+        .p-3 {
+            background-color: v.$color-white;
+            @include m.rounded();
+            color: v.$color-text;
+            @include m.shadow();
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+    }
+}

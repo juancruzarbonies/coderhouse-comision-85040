@@ -1,0 +1,100 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.tienda-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+
+    .producto-card {
+        background-color: v.$color-white;
+        @include m.rounded(12px);
+        @include m.shadow();
+        text-align: center;
+
+        // Animación inicial
+        opacity: 0;
+        transform: translateY(20px);
+        @include m.transition(all, 0.5s);
+
+        // Animación escalonada
+        &:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        &:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        &:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        &:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        &:nth-child(5) {
+            transition-delay: 0.5s;
+        }
+
+        &:nth-child(6) {
+            transition-delay: 0.6s;
+        }
+
+        // Aparece automáticamente al cargar
+        @at-root .tienda-container .producto-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        &:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        h3 {
+            margin: 15px 0 5px;
+            color: v.$color-text;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        p {
+            color: v.$color-text-light;
+            padding: 0 15px;
+            margin-bottom: 15px;
+        }
+
+        .precio {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: v.$color-primary;
+            margin-bottom: 10px;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            background-color: v.$color-primary;
+            color: v.$color-white;
+            padding: 10px 18px;
+            margin-bottom: 15px;
+            @include m.rounded(8px);
+            text-decoration: none;
+            font-weight: 600;
+            @include m.transition(all, 0.2s);
+
+            &:hover {
+                background-color: v.$color-primary-dark;
+                transform: translateY(-3px) scale(1.05);
+            }
+        }
+    }
+}

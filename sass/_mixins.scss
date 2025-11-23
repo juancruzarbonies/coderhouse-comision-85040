@@ -50,3 +50,13 @@
         opacity: 1;
     }
 }
+
+//animaciones
+// Hover Scale
+@mixin hover-scale($scale: 1.05, $duration: .3s, $timing: ease){
+    transition: transform $duration $timing;
+    
+    &:hover{
+        transform: scale($scale);
+    }
+}

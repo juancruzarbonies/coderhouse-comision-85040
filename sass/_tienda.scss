@@ -1,0 +1,76 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.row.g-4 .card {
+    background-color: v.$color-white;
+    @include m.rounded(12px);
+    @include m.shadow();
+    overflow: hidden;
+    text-align: center;
+
+    // Animación inicial de entrada
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.6s ease forwards;
+
+    // Animación escalonada según posición
+    @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.1s;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        @include m.transition(transform 0.3s ease);
+    }
+
+    h5.card-title {
+        margin: 15px 0 5px;
+        color: v.$color-text;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    p.card-text {
+        color: v.$color-text-light;
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+
+    p.precio {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: v.$color-primary;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        @include m.rounded(8px);
+        @include m.transition(all, 0.2s);
+
+        &:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+    }
+}
+
+// Keyframes para animación de entrada
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

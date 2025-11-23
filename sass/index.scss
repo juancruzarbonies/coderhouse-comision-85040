@@ -19,13 +19,26 @@ header {
         height: auto;
         display: block;
         margin: 0 auto;
-        @include m.rounded(50%); // redondeamos la imagen de perfil/logo
+        @include m.rounded(50%);
+
+        // Animación del logo
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+        @include m.transition(all, 0.8s ease);
+        animation: logoEntrance 1s ease forwards;
     }
 
     h1 {
         color: v.$color-text;
         margin-top: 15px;
         font-weight: bold;
+
+        // Animación del título en cadena
+        opacity: 0;
+        transform: translateY(20px);
+        @include m.transition(all, 0.8s ease);
+        animation: titleEntrance 1s ease forwards;
+        animation-delay: 0.5s;
     }
 
     nav {
@@ -76,5 +89,31 @@ main {
             padding: 15px;
             margin-bottom: 15px;
         }
+    }
+}
+
+// Keyframes del logo
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+// Keyframes del título
+@keyframes titleEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

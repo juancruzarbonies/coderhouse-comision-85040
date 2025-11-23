@@ -38,16 +38,13 @@
             @include m.shadow();
             width: 300px;
             overflow: hidden;
-            @include m.transition(transform);
-            @include m.transition(box-shadow);
+            @include m.transition(transform 0.3s ease, box-shadow 0.3s ease);
 
-            // Animación al cargar
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideUp 0.6s ease forwards;
+            // Animación de entrada
+            @include m.slide-up();
 
             &:hover {
-                transform: scale(1.03);
+                @include m.hover-scale(1.03, 0.3s);
                 box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             }
 
@@ -68,18 +65,36 @@
                 color: v.$color-text-light;
             }
         }
+
+        // efecto de retraso para cada tarjeta
+        .video-card:nth-child(1) { animation-delay: 0s; }
+        .video-card:nth-child(2) { animation-delay: 0.1s; }
+        .video-card:nth-child(3) { animation-delay: 0.2s; }
+        .video-card:nth-child(4) { animation-delay: 0.3s; }
+        .video-card:nth-child(5) { animation-delay: 0.4s; }
+        .video-card:nth-child(6) { animation-delay: 0.5s; }
     }
 }
 
-// Keyframes para la animación
-@keyframes slideUp {
-    0% {
-        transform: translateY(20px);
-        opacity: 0;
+
+// Responsive //
+@media (max-width: 992px) {
+    .videos-container .videos-grid {
+        gap: 15px;
     }
 
-    100% {
-        transform: translateY(0);
-        opacity: 1;
+    .videos-container .video-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .videos-container .video-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .videos-container .video-card {
+        width: 90%;
     }
 }

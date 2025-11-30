@@ -1,7 +1,7 @@
 @use "variables" as v;
 @use "mixins" as m;
 
-.contacto-page {
+.adopciones-page {
     padding: 20px;
     text-align: center;
 
@@ -9,57 +9,82 @@
         color: v.$color-text;
         margin-bottom: 25px;
         font-weight: bold;
+        @include m.slide-up(0.6s);
     }
 
-    form {
-        max-width: 600px;
-        margin: 0 auto;
+    .animal-card {
         background-color: v.$color-white;
-        padding: 25px;
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+
         @include m.rounded(12px);
-        @include m.shadow(0 2px 10px rgba(0,0,0,0.1));
+        @include m.shadow(0 2px 10px rgba(0, 0, 0, 0.1));
+        @include m.transition(transform 0.3s ease);
 
-        label {
-            font-weight: bold;
-            color: v.$color-text;
-            margin-bottom: 5px;
-            display: block;
-            text-align: left;
-        }
+        /* Animación al aparecer */
+        @include m.slide-up(0.7s);
 
-        input,
-        textarea,
-        select {
+        img {
             width: 100%;
-            padding: 10px;
-            border: 1px solid v.$color-gray;
-            @include m.rounded(6px);
-            margin-bottom: 15px;
-            font-size: 1rem;
-            color: v.$color-text;
+            height: 200px;
+            object-fit: cover;
+            @include m.rounded(10px);
         }
+        .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 
-        textarea {
-            resize: vertical;
-            min-height: 120px;
+    span {
+        color: v.$color-white;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+}
+
+/* Cuando está deshabilitado, mostrar la overlay */
+input:disabled + .animal-card .overlay {
+    opacity: 1;
+}
+
+        h5 {
+            margin-top: 10px;
+            color: v.$color-text-active;
         }
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: v.$color-primary;
-            border: none;
-            @include m.rounded(6px);
-            color: v.$color-white;
-            font-size: 1.1rem;
-            cursor: pointer;
-            @include m.transition(background-color);
-            @include m.transition(transform);
+    /* HOVER SOLO SI NO ESTÁ DESHABILITADO */
+    input:not(:disabled)+.animal-card {
+        @include m.hover-scale(1.05, 0.3s);
 
-            &:hover {
-                background-color: v.$color-primary-dark;
-                transform: scale(1.02);
-            }
+        &:hover {
+            @include m.shadow(0 4px 15px rgba(0, 0, 0, 0.25));
         }
+    }
+
+    /* SELECCIONADO */
+    input:checked:not(:disabled)+.animal-card {
+        border: 2px solid v.$color-primary;
+        transform: scale(1.03);
+        @include m.shadow(0 4px 15px rgba(0, 0, 0, 0.3));
+    }
+
+    /* NO DISPONIBLE */
+    input:disabled+.animal-card {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        transform: none;
     }
 }

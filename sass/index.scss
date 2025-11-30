@@ -1,112 +1,11 @@
 @use "variables" as v;
 @use "mixins" as m;
 
-.index-page {
-    background-color: v.$color-header-bg;
-    color: v.$color-text;
-    min-height: 100vh;
-}
+// ============================
+// Animaciones
+// ============================
 
-//* Header de la página inicio *//
-header {
-    background-color: v.$color-header-bg;
-    padding: 20px;
-    text-align: center;
-
-    img {
-        width: 100px;
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        @include m.rounded(50%);
-
-        // Animación del logo
-        opacity: 0;
-        transform: translateY(20px) scale(0.9);
-        @include m.transition(all, 0.8s ease);
-        animation: logoEntrance 1s ease forwards;
-    }
-
-    h1 {
-        color: v.$color-text;
-        margin-top: 15px;
-        font-weight: bold;
-
-        // Animación del título en cadena
-        opacity: 0;
-        transform: translateY(20px);
-        @include m.transition(all, 0.8s ease);
-        animation: titleEntrance 1s ease forwards;
-        animation-delay: 0.5s;
-    }
-
-    nav {
-        ul {
-            @include m.flex-center(15px, wrap);
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
-
-            li {
-                a {
-                    text-decoration: none;
-                    color: v.$color-text;
-                    font-weight: bold;
-                    @include m.transition(color);
-
-                    &.active {
-                        color: v.$color-text-active;
-                        font-weight: bolder;
-                    }
-
-                    &:hover {
-                        color: v.$color-text-active;
-                    }
-                }
-            }
-        }
-    }
-}
-
-//* Main del index *//
-main {
-    padding: 20px;
-    text-align: center;
-
-    .row {
-        align-items: center;
-
-        img {
-            @include m.rounded();
-        }
-
-        .p-3 {
-            background-color: v.$color-white;
-            @include m.rounded();
-            color: v.$color-text;
-            @include m.shadow();
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-    }
-}
-
-// Keyframes del logo
-@keyframes logoEntrance {
-    0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.9);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-// Keyframes del título
-@keyframes titleEntrance {
+@keyframes fadeUp {
     0% {
         opacity: 0;
         transform: translateY(20px);
@@ -115,5 +14,47 @@ main {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes softZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// ============================
+// Imagen del index
+// ============================
+.index-img {
+    @include m.rounded();
+    opacity: 0; 
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 0.3s; 
+}
+// ============================
+// Cuadro de texto
+// ============================
+.text-box {
+    background-color: v.$color-white;
+    @include m.rounded();
+    @include m.shadow();
+    color: v.$color-text;
+    padding: 15px;
+    margin-bottom: 15px;
+    opacity: 0; 
+    animation: softZoom 0.7s ease-out forwards;
+    animation-delay: 0.5s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.03);
+        @include m.shadow(0 8px 20px rgba(0, 0, 0, 0.15));
     }
 }

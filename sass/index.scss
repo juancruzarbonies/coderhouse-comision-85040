@@ -5,6 +5,18 @@
 // Animaciones
 // ============================
 
+
+.index-img {
+    display: block;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.index-img {
+    will-change: transform, opacity;
+}
+
 @keyframes fadeUp {
     0% {
         opacity: 0;
@@ -34,10 +46,11 @@
 // ============================
 .index-img {
     @include m.rounded();
-    opacity: 0; 
+    opacity: 0;
     animation: fadeUp 0.8s ease-out forwards;
-    animation-delay: 0.3s; 
+    animation-delay: 0.3s;
 }
+
 // ============================
 // Cuadro de texto
 // ============================
@@ -48,7 +61,7 @@
     color: v.$color-text;
     padding: 15px;
     margin-bottom: 15px;
-    opacity: 0; 
+    opacity: 0;
     animation: softZoom 0.7s ease-out forwards;
     animation-delay: 0.5s;
     transition: transform 0.3s ease, box-shadow 0.3s ease;

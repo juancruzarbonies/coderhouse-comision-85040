@@ -181,12 +181,10 @@ footer ul li {
 }
 .videos-page .ratio:hover {
   transition: transform 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 .videos-page .ratio:hover:hover {
   transform: scale(1.03);
-}
-.videos-page .ratio:hover {
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .videos-container {
@@ -217,18 +215,17 @@ footer ul li {
 }
 .videos-container .videos-grid .video-card:hover {
   transition: transform 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 .videos-container .videos-grid .video-card:hover:hover {
   transform: scale(1.03);
-}
-.videos-container .videos-grid .video-card:hover {
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 .videos-container .videos-grid .video-card iframe,
 .videos-container .videos-grid .video-card img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .videos-container .videos-grid .video-card h3 {
   margin: 10px 0;
@@ -379,7 +376,8 @@ footer ul li {
 .mascotas-page .galeria-grid .animal-card img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease 0.3s ease;
 }
 .mascotas-page .galeria-grid .animal-card img:hover {
@@ -482,7 +480,8 @@ footer ul li {
 .row.g-4 .card img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease 0.3s ease;
 }
 .row.g-4 .card h5.card-title {
@@ -548,7 +547,8 @@ footer ul li {
 .adopciones-page .animal-card img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 12px;
   transition: 0.3s ease;
 }
@@ -745,7 +745,8 @@ footer ul li {
 .galeria-page .galeria-item img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease 0.3s ease;
 }
 .galeria-page .galeria-item img:hover {
@@ -783,6 +784,4 @@ footer ul li {
   .galeria-item {
     width: 90%;
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

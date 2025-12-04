@@ -1,11 +1,11 @@
 @use "variables" as v;
-@use "index";
+@use "mixins";
 @use "header";
 @use "footer";
+@use "index";
 @use "videos";
 @use "mascotas";
 @use "tienda";
 @use "adopciones";
 @use "contacto";
 @use "galeria";
-@use 'mixins';

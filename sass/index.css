@@ -1,0 +1,75 @@
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes logoFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.index-img {
+  display: block;
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.index-img {
+  will-change: transform, opacity;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes softZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.index-img {
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.text-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  padding: 15px;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: softZoom 0.7s ease-out forwards;
+  animation-delay: 0.5s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.text-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}/*# sourceMappingURL=index.css.map */
